@@ -7,6 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
                 <outlet property="btnAppStoreFetch" destination="bry-Dt-EJm" id="Vu3-wQ-fec"/>
+                <outlet property="btnOpenInBrowser" destination="g5N-eA-Nk0" id="5F4-cK-9cc"/>
                 <outlet property="btnParseFullSceneName" destination="v4c-ct-dvl" id="w94-tx-3UO"/>
                 <outlet property="btnRebuild" destination="cAg-jL-7mP" id="fAo-Iz-0gD"/>
                 <outlet property="btnUpload" destination="6Kv-E3-4vA" id="V4c-Jn-v2f"/>
@@ -18,11 +19,14 @@
                 <outlet property="lblReleaseName" destination="fgJ-u9-V8d" id="B4N-4F-8wr"/>
                 <outlet property="lblReleaseRegType" destination="SeB-ok-pYj" id="Cyk-A2-hkM"/>
                 <outlet property="lblReleaseVersion" destination="1SW-im-mzf" id="66j-XD-2FS"/>
+                <outlet property="txtDescription" destination="nI1-4c-V43" id="S9X-Vd-7fE"/>
                 <outlet property="txtDescriptionCode" destination="sp9-mn-1tI" id="0lR-Jp-QzS"/>
                 <outlet property="txtFullSceneName" destination="PJQ-LC-tOD" id="3yi-Xd-IWf"/>
                 <outlet property="txtImageCode" destination="QMF-Y7-YSu" id="f9i-CL-wv2"/>
+                <outlet property="txtPassWord" destination="vWD-8C-ywl" id="mhx-ws-76b"/>
                 <outlet property="txtTagsCode" destination="s8I-zA-EjL" id="ACC-5v-Z47"/>
                 <outlet property="txtTitleCode" destination="PTa-Fn-agn" id="aw4-Bi-vlV"/>
+                <outlet property="txtUserName" destination="U1q-NJ-vxl" id="OLo-HO-idl"/>
                 <outlet property="window" destination="2" id="6"/>
             </connections>
         </customObject>
@@ -30,14 +34,14 @@
         <customObject id="-3" userLabel="Application"/>
         <window title="MacTorrents Description Helper" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="2" customClass="MainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <rect key="contentRect" x="131" y="74" width="606" height="459"/>
+            <rect key="contentRect" x="131" y="74" width="606" height="632"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="3">
-                <rect key="frame" x="0.0" y="0.0" width="606" height="459"/>
+                <rect key="frame" x="0.0" y="0.0" width="606" height="632"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <popUpButton verticalHuggingPriority="750" id="uNk-wY-ff7">
-                        <rect key="frame" x="18" y="291" width="571" height="26"/>
+                        <rect key="frame" x="18" y="414" width="440" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="NUP-ST-tqD">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -52,7 +56,7 @@
                         </popUpButtonCell>
                     </popUpButton>
                     <textField verticalHuggingPriority="750" id="PJQ-LC-tOD">
-                        <rect key="frame" x="20" y="417" width="478" height="22"/>
+                        <rect key="frame" x="20" y="540" width="478" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Torrent Filename" drawsBackground="YES" id="Xln-Zp-SOb">
                             <font key="font" metaFont="system"/>
@@ -61,7 +65,7 @@
                         </textFieldCell>
                     </textField>
                     <box autoresizesSubviews="NO" title="Parsed Scene Name" borderType="line" id="C2e-H4-6AD">
-                        <rect key="frame" x="17" y="319" width="572" height="90"/>
+                        <rect key="frame" x="17" y="442" width="572" height="90"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
                             <rect key="frame" x="1" y="1" width="570" height="74"/>
@@ -126,7 +130,7 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <button verticalHuggingPriority="750" id="v4c-ct-dvl">
-                        <rect key="frame" x="500" y="411" width="92" height="32"/>
+                        <rect key="frame" x="500" y="534" width="92" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Find" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HAh-5s-Nrj">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -163,7 +167,7 @@
                         </scroller>
                     </scrollView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="09l-fa-r6M">
-                        <rect key="frame" x="18" y="248" width="38" height="17"/>
+                        <rect key="frame" x="18" y="371" width="38" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" id="Oba-cO-ePu">
                             <font key="font" metaFont="system"/>
@@ -172,7 +176,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="PTa-Fn-agn">
-                        <rect key="frame" x="188" y="245" width="398" height="22"/>
+                        <rect key="frame" x="188" y="368" width="398" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2Ie-Ih-KQx">
                             <font key="font" metaFont="system"/>
@@ -181,7 +185,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="W1i-hH-x9S">
-                        <rect key="frame" x="18" y="223" width="171" height="17"/>
+                        <rect key="frame" x="18" y="346" width="171" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Compatible with (Mac OS)" id="443-PK-30U">
                             <font key="font" metaFont="system"/>
@@ -190,7 +194,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="kAR-Dd-uMu">
-                        <rect key="frame" x="18" y="198" width="171" height="17"/>
+                        <rect key="frame" x="18" y="321" width="171" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tags" id="soe-se-Zqk">
                             <font key="font" metaFont="system"/>
@@ -199,7 +203,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="s8I-zA-EjL">
-                        <rect key="frame" x="188" y="196" width="398" height="22"/>
+                        <rect key="frame" x="188" y="319" width="398" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="r7R-g6-R6J">
                             <font key="font" metaFont="system"/>
@@ -208,7 +212,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="xwU-d7-Hkm">
-                        <rect key="frame" x="18" y="173" width="171" height="17"/>
+                        <rect key="frame" x="18" y="296" width="171" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Image" id="tIp-Ju-CF2">
                             <font key="font" metaFont="system"/>
@@ -217,7 +221,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="QMF-Y7-YSu">
-                        <rect key="frame" x="188" y="171" width="398" height="22"/>
+                        <rect key="frame" x="188" y="294" width="398" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="hoy-Bf-fCp">
                             <font key="font" metaFont="system"/>
@@ -226,9 +230,9 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5I7-fn-GqQ">
-                        <rect key="frame" x="18" y="150" width="171" height="17"/>
+                        <rect key="frame" x="18" y="271" width="171" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MacTorrents Description" id="nKs-TA-mK0">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Description" id="nKs-TA-mK0">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -251,7 +255,7 @@
                         </buttonCell>
                     </button>
                     <comboBox verticalHuggingPriority="750" id="Zxt-tf-9Qy">
-                        <rect key="frame" x="188" y="219" width="99" height="26"/>
+                        <rect key="frame" x="188" y="342" width="99" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="fBt-fD-uaf">
                             <font key="font" metaFont="system"/>
@@ -266,7 +270,7 @@
                         </comboBoxCell>
                     </comboBox>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eIP-yn-0Qy">
-                        <rect key="frame" x="18" y="272" width="171" height="17"/>
+                        <rect key="frame" x="18" y="395" width="171" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Type" id="3Qb-tZ-7Bh">
                             <font key="font" metaFont="system"/>
@@ -275,7 +279,7 @@
                         </textFieldCell>
                     </textField>
                     <comboBox verticalHuggingPriority="750" id="he4-0H-DRy">
-                        <rect key="frame" x="188" y="268" width="99" height="26"/>
+                        <rect key="frame" x="188" y="391" width="99" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="BMu-DW-qzu">
                             <font key="font" metaFont="system"/>
@@ -287,6 +291,83 @@
                             </objectValues>
                         </comboBoxCell>
                     </comboBox>
+                    <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="6QE-vf-uJ4">
+                        <rect key="frame" x="20" y="154" width="566" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="j9K-yF-rYL">
+                        <rect key="frame" x="20" y="165" width="566" height="100"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <clipView key="contentView" id="M4C-x3-pDE">
+                            <rect key="frame" x="1" y="1" width="564" height="98"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="nI1-4c-V43">
+                                    <rect key="frame" x="0.0" y="0.0" width="564" height="98"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="564" height="98"/>
+                                    <size key="maxSize" width="585" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="564" height="98"/>
+                                    <size key="maxSize" width="585" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="mvI-Bi-0g8">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="sfJ-wJ-DV8">
+                            <rect key="frame" x="549" y="1" width="16" height="98"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button verticalHuggingPriority="750" id="g5N-eA-Nk0">
+                        <rect key="frame" x="457" y="410" width="135" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Open in browser" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fc6-v8-XgZ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <box autoresizesSubviews="NO" title="MacTorrents Credentials" borderType="line" id="hw9-zo-EJN">
+                        <rect key="frame" x="17" y="566" width="577" height="66"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="575" height="50"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <secureTextField verticalHuggingPriority="750" id="vWD-8C-ywl">
+                                    <rect key="frame" x="291" y="16" width="177" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="JIY-Od-7mD">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <allowedInputSourceLocales>
+                                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                        </allowedInputSourceLocales>
+                                    </secureTextFieldCell>
+                                </secureTextField>
+                                <textField verticalHuggingPriority="750" id="U1q-NJ-vxl">
+                                    <rect key="frame" x="106" y="16" width="177" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="WZc-6D-X2v">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
                 </subviews>
             </view>
         </window>

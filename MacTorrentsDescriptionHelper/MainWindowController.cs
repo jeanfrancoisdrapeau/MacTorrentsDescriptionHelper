@@ -54,8 +54,19 @@ namespace MacTorrentsDescriptionHelper
 			cmbAppStoreSelect.Activated += event_cmbAppStoreSelect_Activated;
 			btnRebuild.Activated += event_btnRebuild_Activated;
 			btnUpload.Activated += event_btnUpload_Activated;
+			btnOpenInBrowser.Activated += event_btnOpenInBrowser_Activated;
 
 			cmbAppStoreSelect.RemoveAllItems ();
+		}
+			
+		public void event_btnOpenInBrowser_Activated(object sender, EventArgs e)
+		{
+			string id = cmbAppStoreSelect.TitleOfSelectedItem.Split (':')[0].Trim();
+
+			//https://itunes.apple.com/ca/app/id795396190
+			string url = "https://itunes.apple.com/ca/app/id" + id;
+			System.Diagnostics.Process.Start(url);
+		
 		}
 
 		public class ReleaseInfo
@@ -69,6 +80,11 @@ namespace MacTorrentsDescriptionHelper
 			public string releaseName { get; set; }
 			public string releaseVersion { get; set; }
 			public string releaseGroup { get; set; }
+
+			public string releaseWhatsNew { get; set; }
+			public string releaseUrl { get; set; }
+			public string releaseRating { get; set; }
+			public string releaseRatingNb { get; set; }
 		}
 		public ReleaseInfo _releaseInfo;
 
@@ -172,8 +188,8 @@ namespace MacTorrentsDescriptionHelper
 			var client = new WebClientEx ();
 			var values = new NameValueCollection
 			{
-				{ "username", "eluder" },
-				{ "password", "$N0feaR!" },
+				{ "username", txtUserName.StringValue },
+				{ "password", txtPassWord.StringValue },
 			};
 
 			// Authenticate
@@ -223,23 +239,21 @@ namespace MacTorrentsDescriptionHelper
 			//txtCompCode.StringValue = string.Empty;
 			txtTagsCode.StringValue = first.primaryGenreName;
 			txtImageCode.StringValue = first.artworkUrl60;
+			txtDescription.Value = first.description;
 
+			_releaseInfo.releaseWhatsNew = first.releaseNotes;
+			_releaseInfo.releaseUrl = first.trackViewUrl;
+			_releaseInfo.releaseRating = first.averageUserRatingForCurrentVersion;
+			_releaseInfo.releaseRatingNb = first.userRatingCountForCurrentVersion;
 			//rebuildDescCode ();
 		}
 
 		public void rebuildDescCode()
 		{
-			if (cmbAppStoreSelect.TitleOfSelectedItem == null)
-				return;
-
-			string id = cmbAppStoreSelect.TitleOfSelectedItem.Split (':')[0].Trim();
-
-			iTuneJsonResults first = _itunesObj.results.First(o => o.trackId.Equals(id));
-
 			//MacTorrents Code
 			string finalCode = "[b]Title:[/b] " + _releaseInfo.releaseName + "\n";
 			finalCode += "[b]Version:[/b] " + _releaseInfo.releaseVersion + "\n";
-			finalCode += "[b]What's New:[/b] \n" + first.releaseNotes + "\n";
+			finalCode += "[b]What's New:[/b] \n" + _releaseInfo.releaseWhatsNew + "\n";
 			finalCode += "\n";
 			finalCode += "[b]Group:[/b] " + _releaseInfo.releaseGroup + "\n";
 			finalCode += "[b]Crack:[/b] " + (_releaseInfo.releaseIsCracked ? "Yes" : "No") + "\n";
@@ -247,12 +261,12 @@ namespace MacTorrentsDescriptionHelper
 			finalCode += "[b]Retail:[/b] " + (_releaseInfo.releaseIsRetail ? "Yes" : "No") + "\n";
 			finalCode += "[b]Original Scene Files:[/b] Yes\n";
 			finalCode += "\n";
-			finalCode += "[b]Info Link:[/b] " + first.trackViewUrl + "\n";
+			finalCode += "[b]Info Link:[/b] " + _releaseInfo.releaseUrl + "\n";
 			finalCode += "[b]System Reqs:[/b] Mac OSX " + cmbComp.StringValue + "\n";
-			finalCode += "[b]Rating:[/b] " + first.averageUserRatingForCurrentVersion +
-				" from " + first.userRatingCountForCurrentVersion + " users\n";
+			finalCode += "[b]Rating:[/b] " + (string.IsNullOrEmpty(_releaseInfo.releaseRating) ? "0" : _releaseInfo.releaseRating) +
+				" (" + (string.IsNullOrEmpty(_releaseInfo.releaseRatingNb) ? "0" : _releaseInfo.releaseRatingNb) + " users)\n";
 			finalCode += "\n";
-			finalCode += "[b]Info:[/b]\n" + first.description + "\n";
+			finalCode += "[b]Info:[/b]\n" + txtDescription.Value + "\n";
 
 			txtDescriptionCode.Value = finalCode;
 		}

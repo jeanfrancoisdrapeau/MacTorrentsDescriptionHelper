@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Xamarin Studio to store outlets and
 // actions made in the UI designer. If it is removed, they will be lost.
@@ -14,6 +14,9 @@ namespace MacTorrentsDescriptionHelper
 	{
 		[Outlet]
 		MonoMac.AppKit.NSButton btnAppStoreFetch { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSButton btnOpenInBrowser { get; set; }
 
 		[Outlet]
 		MonoMac.AppKit.NSButton btnParseFullSceneName { get; set; }
@@ -52,6 +55,9 @@ namespace MacTorrentsDescriptionHelper
 		MonoMac.AppKit.NSTextField lblReleaseVersion { get; set; }
 
 		[Outlet]
+		MonoMac.AppKit.NSTextView txtDescription { get; set; }
+
+		[Outlet]
 		MonoMac.AppKit.NSTextView txtDescriptionCode { get; set; }
 
 		[Outlet]
@@ -61,16 +67,37 @@ namespace MacTorrentsDescriptionHelper
 		MonoMac.AppKit.NSTextField txtImageCode { get; set; }
 
 		[Outlet]
+		MonoMac.AppKit.NSSecureTextField txtPassWord { get; set; }
+
+		[Outlet]
 		MonoMac.AppKit.NSTextField txtTagsCode { get; set; }
 
 		[Outlet]
 		MonoMac.AppKit.NSTextField txtTitleCode { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSTextField txtUserName { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (cmbComp != null) {
-				cmbComp.Dispose ();
-				cmbComp = null;
+			if (txtPassWord != null) {
+				txtPassWord.Dispose ();
+				txtPassWord = null;
+			}
+
+			if (btnAppStoreFetch != null) {
+				btnAppStoreFetch.Dispose ();
+				btnAppStoreFetch = null;
+			}
+
+			if (btnOpenInBrowser != null) {
+				btnOpenInBrowser.Dispose ();
+				btnOpenInBrowser = null;
+			}
+
+			if (btnParseFullSceneName != null) {
+				btnParseFullSceneName.Dispose ();
+				btnParseFullSceneName = null;
 			}
 
 			if (btnRebuild != null) {
@@ -83,24 +110,19 @@ namespace MacTorrentsDescriptionHelper
 				btnUpload = null;
 			}
 
-			if (cmbType != null) {
-				cmbType.Dispose ();
-				cmbType = null;
-			}
-
-			if (btnAppStoreFetch != null) {
-				btnAppStoreFetch.Dispose ();
-				btnAppStoreFetch = null;
-			}
-
-			if (btnParseFullSceneName != null) {
-				btnParseFullSceneName.Dispose ();
-				btnParseFullSceneName = null;
-			}
-
 			if (cmbAppStoreSelect != null) {
 				cmbAppStoreSelect.Dispose ();
 				cmbAppStoreSelect = null;
+			}
+
+			if (cmbComp != null) {
+				cmbComp.Dispose ();
+				cmbComp = null;
+			}
+
+			if (cmbType != null) {
+				cmbType.Dispose ();
+				cmbType = null;
 			}
 
 			if (imgThumbnail != null) {
@@ -133,6 +155,11 @@ namespace MacTorrentsDescriptionHelper
 				lblReleaseVersion = null;
 			}
 
+			if (txtDescription != null) {
+				txtDescription.Dispose ();
+				txtDescription = null;
+			}
+
 			if (txtDescriptionCode != null) {
 				txtDescriptionCode.Dispose ();
 				txtDescriptionCode = null;
@@ -156,6 +183,11 @@ namespace MacTorrentsDescriptionHelper
 			if (txtTitleCode != null) {
 				txtTitleCode.Dispose ();
 				txtTitleCode = null;
+			}
+
+			if (txtUserName != null) {
+				txtUserName.Dispose ();
+				txtUserName = null;
 			}
 		}
 	}
