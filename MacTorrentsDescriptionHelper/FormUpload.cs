@@ -81,6 +81,16 @@ namespace MacTorrentsDescriptionHelper
 					// Write the file data directly to the Stream, rather than serializing it to a string.
 					formDataStream.Write(fileToUpload.File, 0, fileToUpload.File.Length);
 				}
+				else if (param.Value is string[])
+				{
+					foreach (string s in param.Value as string[]) {
+						string postData = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
+							boundary,
+							param.Key,
+							s);
+						formDataStream.Write(encoding.GetBytes(postData), 0, encoding.GetByteCount(postData));
+					}
+				}
 				else
 				{
 					string postData = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",

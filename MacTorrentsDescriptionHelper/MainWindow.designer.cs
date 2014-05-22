@@ -16,7 +16,16 @@ namespace MacTorrentsDescriptionHelper
 		MonoMac.AppKit.NSButton btnAppStoreFetch { get; set; }
 
 		[Outlet]
+		MonoMac.AppKit.NSButton btnDesuraStoreFetch { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSButton btnFindNfo { get; set; }
+
+		[Outlet]
 		MonoMac.AppKit.NSButton btnOpenInBrowser { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSButton btnParseDesuraUrl { get; set; }
 
 		[Outlet]
 		MonoMac.AppKit.NSButton btnParseFullSceneName { get; set; }
@@ -67,7 +76,13 @@ namespace MacTorrentsDescriptionHelper
 		MonoMac.AppKit.NSTextField txtImageCode { get; set; }
 
 		[Outlet]
+		MonoMac.AppKit.NSTextField txtNfoFilename { get; set; }
+
+		[Outlet]
 		MonoMac.AppKit.NSSecureTextField txtPassWord { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSTextField txtSearchTerms { get; set; }
 
 		[Outlet]
 		MonoMac.AppKit.NSTextField txtTagsCode { get; set; }
@@ -80,9 +95,9 @@ namespace MacTorrentsDescriptionHelper
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (txtPassWord != null) {
-				txtPassWord.Dispose ();
-				txtPassWord = null;
+			if (txtSearchTerms != null) {
+				txtSearchTerms.Dispose ();
+				txtSearchTerms = null;
 			}
 
 			if (btnAppStoreFetch != null) {
@@ -90,9 +105,24 @@ namespace MacTorrentsDescriptionHelper
 				btnAppStoreFetch = null;
 			}
 
+			if (btnDesuraStoreFetch != null) {
+				btnDesuraStoreFetch.Dispose ();
+				btnDesuraStoreFetch = null;
+			}
+
+			if (btnFindNfo != null) {
+				btnFindNfo.Dispose ();
+				btnFindNfo = null;
+			}
+
 			if (btnOpenInBrowser != null) {
 				btnOpenInBrowser.Dispose ();
 				btnOpenInBrowser = null;
+			}
+
+			if (btnParseDesuraUrl != null) {
+				btnParseDesuraUrl.Dispose ();
+				btnParseDesuraUrl = null;
 			}
 
 			if (btnParseFullSceneName != null) {
@@ -173,6 +203,16 @@ namespace MacTorrentsDescriptionHelper
 			if (txtImageCode != null) {
 				txtImageCode.Dispose ();
 				txtImageCode = null;
+			}
+
+			if (txtNfoFilename != null) {
+				txtNfoFilename.Dispose ();
+				txtNfoFilename = null;
+			}
+
+			if (txtPassWord != null) {
+				txtPassWord.Dispose ();
+				txtPassWord = null;
 			}
 
 			if (txtTagsCode != null) {

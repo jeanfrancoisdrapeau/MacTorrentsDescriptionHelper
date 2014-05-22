@@ -15,11 +15,13 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.13</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.13</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
 	<key>BuildMachineOSBuild</key>
-	<string>13C64</string>
+	<string>13D43</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>MonoBundleExecutable</key>
@@ -35,18 +37,20 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>5B130a</string>
+	<string>5B1008</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>13C64</string>
+	<string>13D43</string>
 	<key>DTSDKName</key>
 	<string>macosx10.9</string>
 	<key>DTXcode</key>
 	<string>0510</string>
 	<key>DTXcodeBuild</key>
-	<string>5B130a</string>
+	<string>5B1008</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © Jean-Francois Drapeau</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
 </dict>
 </plist>

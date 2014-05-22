@@ -1,0 +1,8 @@
+
+Unhandled Exception:
+System.Net.WebException: The remote server returned an error: (403) Forbidden.
+  at System.Net.HttpWebRequest.CheckFinalStatus (System.Net.WebAsyncResult result) [0x0030c] in /private/tmp/source/bockbuild-mono-3.2.6/profiles/mono-mac-xamarin/build-root/mono-3.2.6/mcs/class/System/System.Net/HttpWebRequest.cs:1606 
+  at System.Net.HttpWebRequest.SetResponseData (System.Net.WebConnectionData data) [0x00141] in /private/tmp/source/bockbuild-mono-3.2.6/profiles/mono-mac-xamarin/build-root/mono-3.2.6/mcs/class/System/System.Net/HttpWebRequest.cs:1423 
+[ERROR] FATAL UNHANDLED EXCEPTION: System.Net.WebException: The remote server returned an error: (403) Forbidden.
+  at System.Net.HttpWebRequest.CheckFinalStatus (System.Net.WebAsyncResult result) [0x0030c] in /private/tmp/source/bockbuild-mono-3.2.6/profiles/mono-mac-xamarin/build-root/mono-3.2.6/mcs/class/System/System.Net/HttpWebRequest.cs:1606 
+  at System.Net.HttpWebRequest.SetResponseData (System.Net.WebConnectionData data) [0x00141] in /private/tmp/source/bockbuild-mono-3.2.6/profiles/mono-mac-xamarin/build-root/mono-3.2.6/mcs/class/System/System.Net/HttpWebRequest.cs:1423 
